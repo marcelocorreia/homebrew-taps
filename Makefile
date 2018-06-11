@@ -9,7 +9,7 @@ git-push:
 	git add . ; git commit -m "Updating taps"; git push
 
 update_all:
-	@$(foreach app,$(APPS),$(call update,$(app));)
+	@$(foreach app,$(APPS),$(call _update,$(app));)
 
 docker-build:
 	docker build -t  $(IMAGE) .
