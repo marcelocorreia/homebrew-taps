@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-set -e
+
+set -ex
 
 APP_NAME=$1
 API_HTTPS=https://api.github.com/repos
 
 VERSION=$(curl ${API_HTTPS}/${GITHUB_USER}/${APP_NAME}/tags | jq '.[0].name' | sed 's/\"//g')
 OS_DETECTED=$(uname -s)
-TMPDIR=/tmp/homebrew-taps-update
-PKG_FILE=${TMPDIR}/${APP_NAME}-darwin-amd64-${VERSION}.zip
+
+PKG_FILE=${APP_NAME}-darwin-amd64-${VERSION}.zip
 TEMPLATE=templates/${APP_NAME}.tpl
 
 if [ ${OS_DETECTED} == "Darwin" ];then
