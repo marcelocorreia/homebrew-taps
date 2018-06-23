@@ -7,7 +7,7 @@ OS_DETECTED := $(shell uname -s)
 IMAGE := $(GITHUB_USER)/homebrew-taps
 GTE_VERSION := 2.3.0
 
-update_all: update_all git-push
+update_all: update git-push
 
 git-push: ;$(info $(M) Pushing it real good...)
 	git add . ; git commit -m "Updating taps"; git push
