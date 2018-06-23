@@ -1,5 +1,8 @@
 FROM alpine:3.7
 MAINTAINER marcelo correia <marcelo@correia.io>
+
+ARG gte_version="2.3.0"
+
 RUN apk update
 RUN apk add --no-cache --update \
     bash \
@@ -10,7 +13,6 @@ RUN apk add --no-cache --update \
 
 WORKDIR /tmp
 
-ARG gte_version="2.3.0"
 
 RUN curl -L https://github.com/marcelocorreia/go-template-engine/releases/download/${gte_version}/go-template-engine-linux-amd64-${gte_version}.zip \
     -o go-template-engine.zip
