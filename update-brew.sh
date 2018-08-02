@@ -9,14 +9,13 @@ VERSION=$(curl ${API_HTTPS}/${GITHUB_USER}/${APP_NAME}/tags | jq '.[0].name' | s
 OS_DETECTED=$(uname -s)
 
 PKG_FILE=${APP_NAME}-darwin-amd64-${VERSION}.zip
-TEMPLATE=templates/${APP_NAME}.tpl
+TEMPLATE=templates/${APP_NAME}.tpl.rb
 
 if [ ${OS_DETECTED} == "Darwin" ];then
     SHA_CMD="shasum -a 256"
 else
     SHA_CMD="sha256sum"
 fi
-
 
 curl https://github.com/marcelocorreia/${APP_NAME}/releases/download/${VERSION}/${APP_NAME}-darwin-amd64-${VERSION}.zip \
 		-o ${PKG_FILE} -L

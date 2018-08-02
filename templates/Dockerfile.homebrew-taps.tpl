@@ -1,7 +1,7 @@
 FROM alpine:3.7
 MAINTAINER marcelo correia <marcelo@correia.io>
 
-ARG gte_version="2.3.0"
+ARG gte_version="{{.GTE_VERSION}}"
 
 RUN apk update
 RUN apk add --no-cache --update \
