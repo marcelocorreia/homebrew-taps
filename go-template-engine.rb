@@ -2,9 +2,9 @@ require 'formula'
 
 class GoTemplateEngine < Formula
   homepage 'https://github.com/marcelocorreia/go-template-engine'
-  url 'https://github.com/marcelocorreia/go-template-engine/releases/download/3.0.0/go-template-engine-darwin-amd64-3.0.0.zip'
-  version '3.0.0'
-  sha256 '078a7b2b0827b9d5da4e34716b976a2deb71b4dd1b86815413a024dbeaaff040'
+  url 'https://github.com/marcelocorreia/go-template-engine/releases/download/3.0.2/go-template-engine-darwin-amd64-3.0.2.zip'
+  version '3.0.2'
+  sha256 '34cf49a25f4a97025bcc644a345965ae1794047974718d43646759c12573694e'
 
   depends_on :arch => :x86_64
 
