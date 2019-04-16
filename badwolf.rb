@@ -2,9 +2,9 @@
 class Badwolf < Formula
   desc "Hammer or Scapel"
   homepage "https://marcelo.correia.io"
-  url "https://github.com/marcelocorreia/badwolf/marcelocorreia/badwolf/releases/download/0.0.3/badwolf-0.0.3-darwin-x86_64.tar.gz"
-  version "0.0.3"
-  sha256 "c75264d0a549566cd6862d20c3adda661cfd91ad64c3b645aa8007b5b379bd48"
+  url "https://github.com/marcelocorreia/badwolf/marcelocorreia/badwolf/releases/download/0.0.11/badwolf-0.0.11-darwin-x86_64.tar.gz"
+  version "0.0.11"
+  sha256 "5966156423315b17691719146d9fede46492d2c66457d0fa34185d4dcfeb86c9"
 
   def install
     bin.install "badwolf"
