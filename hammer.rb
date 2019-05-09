@@ -2,9 +2,9 @@
 class Hammer < Formula
   desc "Go Template Engine (GTE) - Easy util to apply Go Templates in BAU jobs"
   homepage "https://marcelo.correia.io"
-  url "https://github.com/marcelocorreia/go-template-engine/marcelocorreia/go-template-engine/releases/download/3.1.9/go-template-engine-3.1.9-darwin-x86_64.tar.gz"
-  version "3.1.9"
-  sha256 "441b8ebbd8c5fd2bbc55c1d4509bee3aa1f7a0fab174bd5379fccdcd67887b58"
+  url "https://github.com/marcelocorreia/go-template-engine/marcelocorreia/go-template-engine/releases/download/3.1.11/go-template-engine-3.1.11-darwin-x86_64.tar.gz"
+  version "3.1.11"
+  sha256 "633af703036fae71f86f92efb0d1bb43e4e76c8b170e26e2dfa864b1877b1929"
 
   def install
     bin.install "go-template-engine"
