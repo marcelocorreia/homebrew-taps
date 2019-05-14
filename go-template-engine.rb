@@ -2,13 +2,13 @@
 class GoTemplateEngine < Formula
   desc "Go Template Engine (GTE) - Easy util to apply Go Templates in BAU jobs"
   homepage "https://marcelo.correia.io"
-  url "https://github.com/marcelocorreia/go-template-engine/releases/download/3.3.8/go-template-engine-3.3.8-darwin-x86_64.tar.gz"
-  version "3.3.8"
-  sha256 "e248adb4e4298186c0f441219eb1f048a2c01f96f8be6ab4affaa55ffb41e719"
+  url "https://github.com/marcelocorreia/go-template-engine/releases/download/3.3.9/go-template-engine-3.3.9-darwin-x86_64.tar.gz"
+  version "3.3.9"
+  sha256 "b5b64047c77595b8a936123dbbd7fa9ea0535407518ddfb300bc983345d99c37"
 
   def install
     bin.install "go-template-engine"
-    ln_s '/usr/local/bin/go-template-engine', '/usr/local/bin/gte'
+    bin.install_symlink libexec/"gte"
   end
 
   test do
