@@ -2,13 +2,44 @@
 class Hammer < Formula
   desc "Hammer or Scapel"
   homepage "https://marcelo.correia.io"
-  url "https://github.com/marcelocorreia/hammer/marcelocorreia/hammer/releases/download/0.0.20/hammer-0.0.20-darwin-x86_64.tar.gz"
-  version "0.0.20"
-  sha256 "bf63fe5df3a45a427f009c10bb27434c455438a5d70bf417121ebeeef2176b4b"
+  url "https://github.com/marcelocorreia/hammer/marcelocorreia/hammer/releases/download/0.0.25/hammer-0.0.25-darwin-x86_64.tar.gz"
+  version "0.0.25"
+  sha256 "aafc3e395c8fd0cbd7d4335ede44eb9bbb99857a0aa5296a4c8ac8b0e7292923"
 
   def install
     bin.install "hammer"
     bin.install "hammer-minion"
+  end
+
+  plist_options :startup => false
+
+  def plist; <<~EOS
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+      <dict>
+        <key>KeepAlive</key>
+        <dict>
+          <key>SuccessfulExit</key>
+          <false/>
+        </dict>
+        <key>Label</key>
+        <string>#{plist_name}</string>
+        <key>ProgramArguments</key>
+        <array>
+          <string>#{opt_bin}/hammer</string>
+          <string>server</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>StandardErrorPath</key>
+        <string>#{var}/log/hammer.log</string>
+        <key>StandardOutPath</key>
+        <string>#{var}/log/hammer.log</string>
+      </dict>
+    </plist>
+
+  EOS
   end
 
   test do
