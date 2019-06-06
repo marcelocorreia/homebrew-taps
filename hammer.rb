@@ -2,42 +2,41 @@
 class Hammer < Formula
   desc "Hammer or Scapel"
   homepage "https://marcelo.correia.io"
-  url "https://github.com/marcelocorreia/hammer/marcelocorreia/hammer/releases/download/0.0.25/hammer-0.0.25-darwin-x86_64.tar.gz"
-  version "0.0.25"
-  sha256 "aafc3e395c8fd0cbd7d4335ede44eb9bbb99857a0aa5296a4c8ac8b0e7292923"
+  url "https://github.com/marcelocorreia/hammer/marcelocorreia/hammer/releases/download/0.0.27/hammer-0.0.27-darwin-x86_64.tar.gz"
+  version "0.0.27"
+  sha256 "69e6e4366e18748d4453a8ac432c333664825511e3555b182b96a62975941c16"
 
   def install
     bin.install "hammer"
-    bin.install "hammer-minion"
   end
 
   plist_options :startup => false
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>KeepAlive</key>
-        <dict>
-          <key>SuccessfulExit</key>
-          <false/>
-        </dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_bin}/hammer</string>
-          <string>server</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>StandardErrorPath</key>
-        <string>#{var}/log/hammer.log</string>
-        <key>StandardOutPath</key>
-        <string>#{var}/log/hammer.log</string>
-      </dict>
-    </plist>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>StandardErrorPath</key>
+    <string>/var/log/hammer.log</string>
+    <key>StandardOutPath</key>
+    <string>/var/log/hammer.log</string>
+    <key>KeepAlive</key>
+    <dict>
+      <key>SuccessfulExit</key>
+      <false/>
+    </dict>
+    <key>Label</key>
+    <string>io.correia.hammer</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/bin/hammer</string>
+      <string>server</string>
+    </array>
+  </dict>
+</plist>
 
   EOS
   end
