@@ -2,16 +2,16 @@
 class GoTemplateEngine < Formula
   desc "Go Template Engine (GTE) - Easy util to apply Go Templates in BAU jobs"
   homepage "https://marcelo.correia.io"
-  version "3.3.13"
+  version "3.3.15"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/marcelocorreia/go-template-engine/releases/download/3.3.13/go-template-engine-3.3.13-darwin-x86_64.tar.gz"
-    sha256 "8d2ab96456bb5785454208b3e63f035ffb642d8246324bbbbee62baed5db09ad"
+    url "https://github.com/marcelocorreia/go-template-engine/releases/download/3.3.15/go-template-engine-3.3.15-darwin-x86_64.tar.gz"
+    sha256 "f0a40e6c6eda482128d9d9a02652398a6e166e2aa008209c5fd0c9c96c064ab5"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/marcelocorreia/go-template-engine/releases/download/3.3.13/go-template-engine-3.3.13-linux-x86_64.tar.gz"
-      sha256 "7793202a3780d52b2d8a01ca83cef20726e70babe60112b600820dc5056fe3fa"
+      url "https://github.com/marcelocorreia/go-template-engine/releases/download/3.3.15/go-template-engine-3.3.15-linux-x86_64.tar.gz"
+      sha256 "f33997639a5a0024cbb5604f20893c38f19762744191b213bf5f640b562f5e5d"
     end
   end
 
