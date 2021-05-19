@@ -5,17 +5,17 @@
 class GoTemplateEngine < Formula
   desc "Easy tool to apply Go Templates in BAU jobs"
   homepage "https://github.com/marcelocorreia/go-template-engine"
-  version "7.3.0"
+  version "7.5.0"
   license "NotSureYet"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/marcelocorreia/go-template-engine/releases/download/7.3.0/go-template-engine-7.3.0-darwin-x86_64.tar.gz"
-    sha256 "e2f82519dfaf6377b6a70f7863b81a101e693b3644aacb838708550f4bbbd93c"
+    url "https://github.com/marcelocorreia/go-template-engine/releases/download/7.5.0/go-template-engine-7.5.0-darwin-x86_64.tar.gz"
+    sha256 "2f600f84fc1e76612685bc6e71c09cf5afec011e85fed7602f354a370c1ebb1f"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/marcelocorreia/go-template-engine/releases/download/7.3.0/go-template-engine-7.3.0-linux-x86_64.tar.gz"
-    sha256 "681e7695243ae9018b374e376cb536229f778ac1f51e28aa30b32e8e888c6abe"
+    url "https://github.com/marcelocorreia/go-template-engine/releases/download/7.5.0/go-template-engine-7.5.0-linux-x86_64.tar.gz"
+    sha256 "918ee1dcbf38941d0ff995608327f8d3188d096b3352b558ba758faa69b8febc"
   end
 
   def install
