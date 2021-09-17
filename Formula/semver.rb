@@ -5,17 +5,22 @@
 class Semver < Formula
   desc "Semver tool"
   homepage "https://github.com/marcelocorreia/semver"
-  version "0.0.1"
+  version "0.3.0"
   license "NotSureYet"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/marcelocorreia/semver/releases/download/0.0.1/semver-0.0.1-darwin-x86_64.tar.gz"
-    sha256 "ac504e2300ca8385a05f1e2ed96ac28e1230b9eea9d4b58148f4628ade3f0fdf"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/marcelocorreia/semver/releases/download/0.3.0/semver-0.3.0-darwin-x86_64.tar.gz"
+      sha256 "09ce909384044ca47d1e068810c2a4021b17f0f839d5e297d3f72f1d689f8556"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/marcelocorreia/semver/releases/download/0.0.1/semver-0.0.1-linux-x86_64.tar.gz"
-    sha256 "163996611f7399530a3e0f30124a109b779bc300fa45d15758208badd289f549"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/marcelocorreia/semver/releases/download/0.3.0/semver-0.3.0-linux-x86_64.tar.gz"
+      sha256 "68e206313552dd79a6a04157227867e7221d31bc43d456673bb0d24ed9a51edb"
+    end
   end
 
   def install
